@@ -1,6 +1,78 @@
-#Write a formula and make the python interpreter print the area of a circle with a radius 9.70. For this you should use the value 3.1415 for pi.
 
-#Write a formula and make the python interpreter print the area of a circle with a radius 9.70. For this you should use the value 3.1415 for pi.
+#TASK 04
+
+f = open("path") #f represents a file object, if the file was opened successfully.
+#a for append
+#r for read
+#w for write
+#b for the data in the file to be binary
+
+line = f.readline() #reads on line up to a '\n'
+contents = f.read() #reads all contents
+f.write("line of text\n")
+f.close()
+f.flush()
+
+#open the file
+#while there are lines in the file
+    #read a line
+    #process the line
+
+def read_file(filename=None):
+    line_list = list()
+    if filename: #has some kind of value
+        count = 0 #this variable is used to count the lines in the file
+        f = open(filename, "r")
+        line = f.readline()
+        while line != "":
+            count += 1
+            line = line.rstrip() #removes all whitespace from the right side of a line
+            print(f"{count}:{line}")
+            line_list.append(line)
+            line = f.readline()
+        f.close()
+    else:
+        print("Must supply a filename")
+    return line_list
+
+
+def write_file(filename):
+    one = list()
+    count = 000
+    f = open(filename, "w")
+    line = ""
+    while line != "\n\n":
+        line = input("Enter a line:")
+        one = one.append(line)
+        for something in one:
+            f.write({count})
+            f.write(something)
+            f.write("\n")
+    f.flush()
+    f.close()
+
+
+def write_file(filename, line_list=[]):
+    response = 0
+    while True:
+        enter = input("Enter a line: ")
+        if enter == "":
+            response += 1
+            if response == 2:
+                break
+        else:
+            line_list += enter
+            if line_list:
+                f = open(filename, "w")
+                count = 000
+                for line in line_list:
+                    f.write(count)
+                    f.write(line)
+                    f.write("\n")
+                    count += 1
+
+
+
 
 
 #CLASS 04
