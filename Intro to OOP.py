@@ -1,5 +1,5 @@
 class Vehicle(object): #object is a keyword in python
-	def __init__(self, make=None, model=None) #start of object definition block
+	def __init__(self, make=None, model=None): #start of object definition block
 		self.make = make
 		self.model = model
 		self.kind = "<unknown>" #initialized with the string of unknown
@@ -11,7 +11,7 @@ class Vehicle(object): #object is a keyword in python
 	def setMake(self, make=""):
 		self.make = make
 		return
-	def setModel(self. model=""):
+	def setModel(self, model=""):
 		self.model = model
 		return
 
@@ -35,6 +35,8 @@ print(connie.getModel()) #Wagon
 #So we extend Vehicle with our new class Landcraft
 #Vehicle is the parent or super-class
 
+#LANDCRAFT
+
 class Landcraft(Vehicle):
 	def __init__(self, make=None, model=None):
 		Vehicle.__init__(self, make=make, model=model) #we make sure the parent initialization behavior works
@@ -51,3 +53,55 @@ print(bradley)
 
 m1.setModel("Abrams M1")
 print(m1) #the model would change
+
+
+#LANDCRAFT SUB-CLASS
+
+class Car(Landcraft):
+	def __init__(self, make=None, model=None, vin=None, color="red"):
+		Landcraft.__init__(self, make=make, model=model)
+		self.vin = vin
+		self.color = color
+		self.wheels = 0
+		self.year = 1900
+		return
+	
+	def getYear(self):
+	    return 
+	
+	def setYear(self,year = 1900):
+		self.year = year
+		return
+	
+	def __repr__(self):
+		return f"<Car: make:{self.make} model:{self.model} year:{self.year}>"
+
+
+#WATERCRAFT
+
+class Watercraft(Vehicle):
+	def __init__(self, make=None, model=None):
+		Vehicle.__init__(self, make=make, model=model) #we make sure the parent initialization behavior works
+		self.kind = "Landcraft" #This was set to unknown in the original class
+		return
+	def __repr__(self):
+		return f"<Watercraft: make:{self.make} model:{self.model} kind:{self.kind}>"
+	
+
+class Motorboat(Watercraft):
+	def __init__(self, make=None, model=None, motorhp=None, hulltype=None, passengers=None):
+		Landcraft.__init__(self, make=make, model=model)
+		self.motorhp = motorhp
+		self.hulltype = hulltype
+		self.passengers = passengers
+		self.year = 1900
+	def getYear(self):
+		return self.year
+	def setYear(self, year=1900):
+		self.year = year
+		return
+	def setPassengers(self, passengers=None):
+		self.passengers = passengers
+		return
+	def __repr__(self):
+		return f"<Motorboat: make:{self.make} model:{self.model} horsepower:{self.motorhp} hull construction:{self.hulltype} year:{self.year}>"
