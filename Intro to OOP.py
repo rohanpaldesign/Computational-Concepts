@@ -67,7 +67,7 @@ class Car(Landcraft):
 		return
 	
 	def getYear(self):
-	    return 
+	    return
 	
 	def setYear(self,year = 1900):
 		self.year = year
