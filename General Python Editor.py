@@ -1,3 +1,15 @@
+#CLASS 05
+
+timeline.setMaxID(<id>)
+
+
+
+
+
+
+
+
+
 
 #TASK 04
 
