@@ -117,6 +117,8 @@ DATABASE_SETTINGS = {
 
 #STEP 02 =====================================================================================================
 
+
+#WORKING
 def load_text_csv(filename=None):
     congress_members = list()
     #
@@ -128,18 +130,9 @@ def load_text_csv(filename=None):
     #       add the resulting information to the list of congress members
     #       close the file
     #       return the congress members
-    if filename:
-        count = 0
-        f = open('US.Senate_twitter_handles_sample.20230123.csv', "r")
-        line = f.readline()
-        while line != "":
-            count += 1
-            line = line.rstrip()
-            congress_members.append(line)
-            line = f.readline()
-        f.close()
-    else:
-        print("Provide a file name")
-        
-    return congress_members # this line should return a list of dictionaries, 
+    data = open(filename, "r")
+    reader = csv.DictReader(data)
+    for row in reader:
+        congress_members.append(row)
+    return congress_members # this line should return a list of dictionaries.
 
