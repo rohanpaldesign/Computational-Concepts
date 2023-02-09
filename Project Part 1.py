@@ -136,3 +136,22 @@ def load_text_csv(filename=None):
         congress_members.append(row)
     return congress_members # this line should return a list of dictionaries.
 
+
+#STEP 03 =======================================================================================================
+
+
+def make_timeline_request(requester=None, max_id=0):
+    tweets = list()
+    #
+    #   You need to:
+    #       set the max_id of the request 
+    #       make the request
+    #       get the response
+    #       return the response
+    max_id = max_id
+    
+    
+    #
+    return tweets # this line should return a list of tweets, dictionaries, 
+
+
